@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+          <div class="ibox-content">
+            <h2>
+                {{vm.foundUsers.length || 0}} forms found for: <span class="text-navy">{{vm.query}}</span>
+            </h2>
+
+            <div class="search-form">
+              <div class="input-group">
+                <input ng-model='vm.query' type="text" placeholder="Search user..." name="search" class="form-control input-lg">
+
+                <div class="input-group-btn">
+                  <button class="btn btn-lg btn-primary" type="submit" ng-click="vm.searchUser()">
+                      Search
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div style="padding: 20px 0 20px 0; text-align:center">
+              <button ng-click="vm.createContact()" ng-if="vm.foundUsers.length > 0" class="btn btn-lg btn-warning">Create HubSpot Contact</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

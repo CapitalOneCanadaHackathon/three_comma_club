@@ -1,0 +1,38 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Careers, Education and Empowerment</h1>
+    <p class="lead">Financial prosperity and a high quality of life for black youth and their families</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Forms</h2>
+      <p>These are all the forms we found for your account.</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Hubspot</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="form in $ctrl.forms track by $index">
+            <td>{{form.title}}</td>
+            <td>{{form.description}}</td>
+            <td>
+              <button ng-click="$ctrl.sync(form.id)" class="btn btn-warning">Sync</button>
+              </td>
+              <td>
+                <i ng-if="$ctrl.showLoading && $ctrl.showLoadingId === form.id" style="vertical-align:middle" class="fa fa-cog fa-spin fa-2x fa-fw"></i>
+                <i ng-if="$ctrl.doneSync && $ctrl.showLoadingId === form.id" style="vertical-align:middle" class="fa fa-check fa-2x fa-fw btn-success"></i>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
